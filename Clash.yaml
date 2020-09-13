@@ -86,7 +86,6 @@ dns:
   - '*.*.xboxlive.com'
 ##Custom fake-ip-filter END##
   nameserver:
-  - 8.8.4.4
   - 114.114.114.114
   - 223.5.5.5
   fallback:
