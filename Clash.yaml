@@ -1,4 +1,4 @@
-redir-port: 7892 
+redir-port: 7892
 port: 7890
 socks-port: 7891
 ipv6: false
@@ -8,7 +8,7 @@ external-controller: 0.0.0.0:9090
 secret: "123456"
 allow-lan: true
 bind-address: "*"
-# external-ui: "/usr/share/openclash/dashboard"
+#external-ui: "/usr/share/openclash/dashboard"
 dns:
   enable: true
   ipv6: false
@@ -87,6 +87,7 @@ dns:
 ##Custom fake-ip-filter END##
   nameserver:
   - 114.114.114.114
+  - 8.8.4.4
   - 223.5.5.5
   fallback:
   - https://doh.rixcloud.dev/dns-query
@@ -137,37 +138,37 @@ proxies:
 #   # ws-headers:
 #   # Host: misty-dream-bdc4.suzishan.workers.dev
 
-- name: "Cloudflare"
-  type: vmess
-  server: cloudflare.com
-  port: 443
-  uuid: 73fddd04-1237-475c-b997-e0bfd822c59c
-  alterId: 32
-  cipher: auto
-  # udp: true
-  tls: true
-  # skip-cert-verify: true
-  # servername: misty-dream-bdc4.suzishan.workers.dev # priority over wss host
-  network: ws
-  ws-path: /YeOklggQdTAkyUSq
-  ws-headers: 
-    Host: misty-dream-bdc4.suzishan.workers.dev
+# - name: "Cloudflare"
+#   type: vmess
+#   server: cloudflare.com
+#   port: 443
+#   uuid: 73fddd04-1237-475c-b997-e0bfd822c59c
+#   alterId: 32
+#   cipher: auto
+#   # udp: true
+#   tls: true
+#   # skip-cert-verify: true
+#   # servername: misty-dream-bdc4.suzishan.workers.dev # priority over wss host
+#   network: ws
+#   ws-path: /YeOklggQdTAkyUSq
+#   ws-headers: 
+#     Host: misty-dream-bdc4.suzishan.workers.dev
 
-- name: "iCook"
-  type: vmess
-  server: icook.tw
-  port: 443
-  uuid: 73fddd04-1237-475c-b997-e0bfd822c59c
-  alterId: 32
-  cipher: auto
-  # udp: true
-  tls: true
-  # skip-cert-verify: true
-  # servername: misty-dream-bdc4.suzishan.workers.dev # priority over wss host
-  network: ws
-  ws-path: /YeOklggQdTAkyUSq
-  ws-headers: 
-    Host: misty-dream-bdc4.suzishan.workers.dev
+# - name: "iCook"
+#   type: vmess
+#   server: icook.tw
+#   port: 443
+#   uuid: 73fddd04-1237-475c-b997-e0bfd822c59c
+#   alterId: 32
+#   cipher: auto
+#   # udp: true
+#   tls: true
+#   # skip-cert-verify: true
+#   # servername: misty-dream-bdc4.suzishan.workers.dev # priority over wss host
+#   network: ws
+#   ws-path: /YeOklggQdTAkyUSq
+#   ws-headers: 
+#     Host: misty-dream-bdc4.suzishan.workers.dev
 
 proxy-groups:
 - name: Auto - UrlTest
@@ -176,8 +177,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
   url: https://www.youtube.com #(https://www.youtube.com / http://www.gstatic.com/generate_204)
   interval: "60"
 - name: Proxy
@@ -188,8 +189,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: GlobalTV
   type: select
   proxies:
@@ -198,8 +199,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Youtube
   type: select
   proxies:
@@ -208,8 +209,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Netflix
   type: select
   proxies:
@@ -218,8 +219,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Spotify
   type: select
   proxies:
@@ -228,8 +229,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Steam
   type: select
   proxies:
@@ -238,8 +239,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Telegram
   type: select
   proxies:
@@ -248,8 +249,18 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
+- name: Speedtest
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - "BandWagon"
+  - "HongKong"
+  - "Taiwan"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Apple
   type: select
   proxies:
@@ -268,8 +279,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Domestic
   type: select
   proxies:
@@ -283,8 +294,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: ChinaTV
   type: select
   proxies:
@@ -293,18 +304,8 @@ proxy-groups:
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
-- name: Speedtest
-  type: select
-  proxies:
-  - Proxy
-  - DIRECT
-  - "BandWagon"
-  - "HongKong"
-  - "Taiwan"
-  - "Cloudflare"
-  - "iCook"
+#  - "Cloudflare"
+#  - "iCook"
 - name: Others
   type: select
   proxies:
@@ -318,8 +319,6 @@ proxy-groups:
   - Proxy
   - DIRECT
 
-# 规则
-Rule:
 rules:
 ##Others:Others
 ##Domestic:Domestic
@@ -11159,31 +11158,3 @@ rules:
 - GEOIP,CN,Domestic
 ###- MATCH,Others
 - MATCH,DIRECT
-
-# Clash for Windows
-cfw-bypass:
-  - qq.com
-  - music.163.com
-  - '*.music.126.net'
-  - localhost
-  - 127.*
-  - 10.*
-  - 172.16.*
-  - 172.17.*
-  - 172.18.*
-  - 172.19.*
-  - 172.20.*
-  - 172.21.*
-  - 172.22.*
-  - 172.23.*
-  - 172.24.*
-  - 172.25.*
-  - 172.26.*
-  - 172.27.*
-  - 172.28.*
-  - 172.29.*
-  - 172.30.*
-  - 172.31.*
-  - 192.168.*
-  - <local>
-cfw-latency-timeout: 5000
