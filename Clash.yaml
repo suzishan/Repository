@@ -174,6 +174,7 @@ proxy-groups:
 - name: Auto - UrlTest
   type: url-test
   proxies:
+  - DIRECT
   - "BandWagon"
   - "HongKong"
   - "Taiwan"
@@ -271,6 +272,16 @@ proxy-groups:
   proxies:
   - Proxy
   - DIRECT
+- name: eBay
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - "BandWagon"
+  - "HongKong"
+  - "Taiwan"
+#  - "Cloudflare"
+#  - "iCook"
 - name: PayPal
   type: select
   proxies:
@@ -322,6 +333,7 @@ proxy-groups:
 rules:
 ##Others:Others
 ##Domestic:Domestic
+##eBay:eBay
 ##PayPal:PayPal
 ##Microsoft:Microsoft
 ##Telegram:Telegram
@@ -9981,8 +9993,6 @@ rules:
 - IP-CIDR6,2001:b28:f23d::/48,Telegram
 - IP-CIDR6,2001:b28:f23f::/48,Telegram
 
-
-
 # > Fast
 - DOMAIN-SUFFIX,fast.com,Speedtest
 
@@ -9991,15 +10001,17 @@ rules:
 - DOMAIN-KEYWORD,speedtest,Speedtest
 - DOMAIN-SUFFIX,ooklaserver.net,Speedtest
 
-
-
 # > PayPal
 # - USER-AGENT,PayPal*,PayPal
 - DOMAIN-KEYWORD,paypal,PayPal
 - DOMAIN-SUFFIX,paypal.com,PayPal
 - DOMAIN-SUFFIX,paypalobjects.com,PayPal
 
-
+# > eBay
+# - USER-AGENT,eBay*,eBay
+- DOMAIN-KEYWORD,eBay,eBay
+- DOMAIN-SUFFIX,eBay.com,eBay
+- DOMAIN-SUFFIX,eBayobjects.com,eBay
 
 # > Microsoft
 # - USER-AGENT,OneDrive*,Microsoft
