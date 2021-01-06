@@ -359,6 +359,7 @@ rules:
 - DOMAIN-SUFFIX,popyard.com,Proxy
 - DOMAIN-SUFFIX,washingtonpost.com,Proxy
 - DOMAIN-SUFFIX,theguardian.com,Proxy
+- DOMAIN-SUFFIX,nbcnews.com,Proxy
 
 - DOMAIN-SUFFIX,taobao.com,DIRECT
 - DOMAIN-SUFFIX,tmall.com,DIRECT
